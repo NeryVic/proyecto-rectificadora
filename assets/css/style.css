@@ -21,14 +21,6 @@ body {
     background-color: #0a0c0d; /* color fondo */
 }
 
-.navbarNav .nav-link ul li a:hover {
-    color: #a2a1ce;
-    background-color: #290c725b;
-    box-shadow: 0 0 400px 86px #7270ec;
-    -webkit-box-shadow: 0 0 400px 86px #7270ec;
-    -moz-box-shadow: 0 0 400px 86px #7270ec;
-    text-decoration:  white;
-}
 
 h1, h2, h3,h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
