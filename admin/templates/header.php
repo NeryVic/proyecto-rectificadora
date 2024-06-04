@@ -22,7 +22,7 @@
             <!-- place navbar here -->
             <nav class="navbar navbar-expand navbar-light bg-light">
                 <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="#" aria-current="page"
+                    <a class="nav-item nav-link active" href="<?php echo $url_base;?>index.php" aria-current="page"
                         >Administrador <span class="visually-hidden">(current)</span></a
                     >
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/servicios/">Servicios</a>
