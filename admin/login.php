@@ -46,7 +46,7 @@ include("./bd.php");
                                 name="txtusuario"
                                 id="txtusuario"
                                 aria-describedby="helpId"
-                                placeholder=""
+                                placeholder="Nombre del usuario"
                             />
                             
                         </div>

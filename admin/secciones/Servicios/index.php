@@ -1,7 +1,34 @@
-<?php include("../../templates/header.php");?> 
+<?php
+    include("../../bd.php");
+    
+    if(isset($_GET['txtID'])){
+        //borrar dicho registro con el ID correspondiente.
+        
+        $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
+        $sentencia=$conexion->prepare("DELETE FROM `tabla_servicios` WHERE id=:id ");
+    
+        $sentencia->bindParam(":id",$txtID);
+    
+        $sentencia->execute();
+    }
+    
+    //seleccionar registros
+    $sentencia=$conexion->prepare("SELECT * FROM `tabla_servicios`");
+    $sentencia->execute();
+    $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    
+include("../../templates/header.php");?> 
 <br/>
 <div class="card">
-    <div class="card-header">Servicios</div>
+    <div class="card-header">
+    <a
+        name=""
+        id=""
+        class="btn btn-primary"
+        href="crear.php"
+        role="button"
+        >Agregar registro</a
+    ></div>
     <div class="card-body">
 
     <div
@@ -12,21 +39,38 @@
         >
             <thead>
                 <tr>
-                    <th scope="col">Column 1</th>
-                    <th scope="col">Column 2</th>
-                    <th scope="col">Column 3</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="">
-                    <td scope="row">R1C1</td>
-                    <td>R1C2</td>
-                    <td>R1C3</td>
+            <?php foreach($lista_servicios as $registros){;?>    
+            <tr class="">
+                    <td scope="row"><?php echo $registros['ID'];?></td>
+                    <td scope="row"><?php echo $registros['titulo'];?></td>
+                    <td scope="row"><?php echo $registros['descripcion'];?></td>
+                    <td>
+                        <a
+                            name=""
+                            id=""
+                            class="btn btn-info"
+                            href="editar.php?txtID=<?php echo $registros['ID']; ?>"
+                            role="button"
+                            >Editar</a
+                        >
+                        <a
+                            name=""
+                            id=""
+                            class="btn btn-danger"
+                            href="index.php?txtID=<?php echo $registros['ID']; ?>"
+                            role="button"
+                            >Eliminar</a
+                        >
+                    </td>
                 </tr>
-                <tr class="">
-                    <td scope="row">Item</td>
-                    <td>Item</td>
-                    <td>Item</td>
+                <?php } ?>
                 </tr>
             </tbody>
         </table>
