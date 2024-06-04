@@ -4,9 +4,9 @@
 /* VARIABLES */
 :root {
     --c-dark: #eda011; /* color letras */
-    --c-brand: #9c9eb1; /* color fondo efect */
+    --c-brand: #db6516; /* color fondo efect */
     --c-brand-light: #6970dd; /* color btn */
-    --c-brand-rgb: 78, 87, 212;
+    --c-brand-rgb: 33, 23, 112; /* color background transparent */
     --c-body: #727272; /* color letras descripcion */
     --font-base: "ClashDisplay", sans-serif;
     --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
