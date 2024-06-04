@@ -1,14 +1,14 @@
-crear una base de dato con las siguientes especificaciones.
-crear la carpeta administrativa
+crear una base de dato con las siguientes especificaciones.     X
+crear la carpeta administrativa X
 crear cruds para cada una de las secciones.
-conectar la database
-tabla_servicios.
+conectar la database X
+tabla_servicios. X 
 ID_SERVICIOS, svg o img o icono, titulo y descripcion.
-tabla_portafolio.
+tabla_portafolio. X
 ID_PORTAFOLIO, IMG y titulo
-tabla_admin.
+tabla_admin. X
 ID_ADMIN, usuario y contraseña.
-tabla_repuestos.
+tabla_repuestos. X
 ID_REPUESTO, imagen, titulo, descripcion.
 
-login
+login 
