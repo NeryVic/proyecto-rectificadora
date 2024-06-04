@@ -1,3 +1,11 @@
+<?php 
+include("admin/bd.php");
+    //seleccionar registros
+    $sentencia=$conexion->prepare("SELECT * FROM `tabla_servicios`");
+    $sentencia->execute();
+    $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -130,62 +138,18 @@
                 </div>
             </div>
             <div class="row g-4 text-center">
+                <?php foreach($lista_servicios as $registros){;?>
                 <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="150">
                     <div class="service theme-shadow p-lg-5 p-4">
                         <div class="iconbox">
                             <i class="ri-pen-nib-fill"></i>
+                            
                         </div>
-                        <h5 class="mt-4 mb-3">Servicio 1</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
+                        <h5 class="mt-4 mb-3"><?php echo $registros["titulo"] ;?></h5>
+                        <p><?php echo $registros["descripcion"] ;?></p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="250">
-                    <div class="service theme-shadow p-lg-5 p-4">
-                        <div class="iconbox">
-                            <i class="ri-stack-fill"></i>
-                        </div>
-                        <h5 class="mt-4 mb-3">Servicio 2</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="350">
-                    <div class="service theme-shadow p-lg-5 p-4">
-                        <div class="iconbox">
-                            <i class="ri-ruler-2-fill"></i>
-                        </div>
-                        <h5 class="mt-4 mb-3">Servicio 3</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="450">
-                    <div class="service theme-shadow p-lg-5 p-4">
-                        <div class="iconbox">
-                            <i class="ri-pie-chart-2-fill"></i>
-                        </div>
-                        <h5 class="mt-4 mb-3">Servicio 4</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="550">
-                    <div class="service theme-shadow p-lg-5 p-4">
-                        <div class="iconbox">
-                            <i class="ri-code-box-line"></i>
-                        </div>
-                        <h5 class="mt-4 mb-3">Servicio 5</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="650">
-                    <div class="service theme-shadow p-lg-5 p-4">
-                        <div class="iconbox">
-                            <i class="ri-user-2-fill"></i>
-                        </div>
-                        <h5 class="mt-4 mb-3">Servicio 6</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <?php } ;?>
     </section>
 
     <!-- COUNTER -->
