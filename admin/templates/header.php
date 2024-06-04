@@ -1,7 +1,8 @@
+<?php $url_base="http://localhost/proyecto-rectificadora/admin/";?>
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Administrador del sitio</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -24,10 +25,11 @@
                     <a class="nav-item nav-link active" href="#" aria-current="page"
                         >Administrador <span class="visually-hidden">(current)</span></a
                     >
-                    <a class="nav-item nav-link" href="#">Servicios</a>
-                    <a class="nav-item nav-link" href="#">Portafolio</a>
-                    <a class="nav-item nav-link" href="#">Repuestos</a>
-                    <a class="nav-item nav-link" href="#">Usuarios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/servicios/">Servicios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/portafolio/">Portafolio</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/repuestos/">Repuestos</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/admin/">Usuarios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>login.php">Cerrar sesión</a>
                 </div>
             </nav>
             
