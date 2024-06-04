@@ -63,7 +63,7 @@ include("./bd.php");
                                 name="contraseña"
                                 id="contraseña"
                                 aria-describedby="helpId"
-                                placeholder=""
+                                placeholder="Contraseña"
                             />
                             
                         </div>
