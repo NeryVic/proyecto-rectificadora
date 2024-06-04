@@ -3,11 +3,11 @@
 
 /* VARIABLES */
 :root {
-    --c-dark: #212529;
-    --c-brand: #4e57d4;
-    --c-brand-light: #6970dd;
+    --c-dark: #348e91; /* color letras */
+    --c-brand: #9c9eb1; /* color fondo efect */
+    --c-brand-light: #6970dd; /* color btn */
     --c-brand-rgb: 78, 87, 212;
-    --c-body: #727272;
+    --c-body: #727272; /* color letras descripcion */
     --font-base: "ClashDisplay", sans-serif;
     --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
     --transition: all 0.5s ease;
@@ -18,6 +18,7 @@ body {
     font-family: var(--font-base);
     line-height: 1.7;
     color: var(--c-body);
+    background-color: #0a0c0d; /* color fondo */
 }
 
 h1, h2, h3,h4, h5, h6,
@@ -111,7 +112,7 @@ img {
 
 /* HERO */
 #hero {
-    background: linear-gradient(rgba(var(--c-brand-rgb), 0.507), rgba(var(--c-brand-rgb), 0.438)), url(../images/hero-1.jpg);
+    background: linear-gradient(rgba(var(--c-brand-rgb), 0.507), rgba(var(--c-brand-rgb), 0.438)), url(../images/rb.jpg);
     background-position: center;
     background-size: cover;
 }
