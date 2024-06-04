@@ -34,11 +34,6 @@ a:hover {
     text-decoration: none;
     color: var(--c-brand);
     transition: var(--transition);
-    background-color: #142026;
-    box-shadow: 0 0 100px 16px #142026;
-    -webkit-box-shadow: 0 0 100px 16px #142026;
-    -moz-box-shadow: 0 0 100px 16px #142026;
-    border-radius: 45%;
 }
 
 a:hover {
@@ -89,8 +84,22 @@ img {
     color: var(--c-dark);
 }
 
-.navbar-nav .nav-link.active {
-    color: var(--c-brand);
+@media (min-width: 992px) { /* se activa cuando el ancho de la pantalla es mayor o igual a 992px */
+     .nav-link:hover {
+      background-color: #142026;
+      box-shadow: 0 0 100px 16px #142026;
+      -webkit-box-shadow: 0 0 100px 16px #142026;
+      -moz-box-shadow: 0 0 100px 16px #142026;
+      border-radius: 5px 5px 5px 5px;
+    }
+    .navbar-nav .nav-link.active {
+        color: var(--c-brand);
+        background-color: #142026;
+          box-shadow: 0 0 100px 16px #142026;
+          -webkit-box-shadow: 0 0 100px 16px #142026;
+          -moz-box-shadow: 0 0 100px 16px #142026;
+          border-radius: 5px 5px 5px 5px;
+    }
 }
 
 
