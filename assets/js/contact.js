@@ -1,8 +1,7 @@
-const btn = document.getElementById('button');
+const btn = document.getElementById('submit-btn');
 const form = document.getElementById('contactForm');
 const nameInput = document.getElementById('from_name');
 const emailInput = document.getElementById('email_id');
-const phoneInput = document.getElementById('phone');
 const messageInput = document.getElementById('message');
 
 form.addEventListener('submit', function(event) {
