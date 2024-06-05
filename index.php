@@ -151,8 +151,9 @@ include("admin/bd.php");
                         <h5 class="mt-4 mb-3"><?php echo $registros["titulo"] ;?></h5>
                         <p><?php echo $registros["descripcion"] ;?></p>
                     </div>
-                    </div>
-                <?php } ;?>
+                    <?php } ;?>
+                </div>
+                
     </section>
 
     <!-- COUNTER -->
