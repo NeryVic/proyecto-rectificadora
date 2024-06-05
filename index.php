@@ -236,22 +236,22 @@ include("admin/bd.php");
                 <div class="col-lg-8">
                     <form action="#" class="row g-3 p-lg-5 p-4 bg-white theme-shadow">
                         <div class="form-group col-lg-6">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" id="from_name" placeholder="Nombre">
                         </div>
                         <div class="form-group col-lg-6">
                             <input type="text" class="form-control" placeholder="Apellido">
                         </div>
                         <div class="form-group col-lg-12">
-                            <input type="email" class="form-control" placeholder="Mail">
+                            <input type="email" class="form-control" id="email_id" placeholder="Mail">
                         </div>
                         <div class="form-group col-lg-12">
-                            <input type="text" class="form-control" placeholder="Asunto">
+                            <input type="text" class="form-control" id="asunto" placeholder="Asunto">
                         </div>
                         <div class="form-group col-lg-12">
-                            <textarea name="message" rows="5" class="form-control" placeholder="Enter Message"></textarea>
+                            <textarea name="message" rows="5" class="form-control" id="message" placeholder="Enter Message"></textarea>
                         </div>
                         <div class="form-group col-lg-12 d-grid">
-                            <button class="btn btn-brand">Enviar mensaje</button>
+                            <button class="btn btn-brand" id="submit_btn">Enviar mensaje</button>
                         </div>
                     </form>
                 </div>
