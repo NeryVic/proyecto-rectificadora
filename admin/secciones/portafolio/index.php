@@ -45,8 +45,8 @@ include("../../templates/header.php");?>
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach($lista_portafolio as $registros){;?>
-                    <tr class="">
+                <tr class="">
+                    <?php foreach($lista_portafolio as $registros){;?>
                         <td scope="row"><?php echo $registros['ID'];?></td>
                         <td><?php echo $registros['imagen'];?></td>
                         <td><?php echo $registros['descripcion'];?></td>

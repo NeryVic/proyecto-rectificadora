@@ -6,7 +6,6 @@ if ($_POST) {
     print_r($_FILES);
     
     // Recepción de valores del formulario.
-    $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "";
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : "";
     
     // Recepción de imagen
