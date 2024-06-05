@@ -45,17 +45,34 @@ include("../../templates/header.php");?>
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach($lista_portafolio as $registros){;?>
                     <tr class="">
-                        <td scope="row">R1C1</td>
-                        <td>Ejemplo</td>
-                        <td>R1C2</td>
-                        <td>Editar | Eliminar </td>
+                        <td scope="row"><?php echo $registros['ID'];?></td>
+                        <td><?php echo $registros['imagen'];?></td>
+                        <td><?php echo $registros['descripcion'];?></td>
+                        <td>
+                        <a
+                            name=""
+                            id=""
+                            class="btn btn-info"
+                            href="editar.php?txtID=<?php echo $registros['ID']; ?>"
+                            role="button"
+                            >Editar</a
+                        >
+                        <a
+                            name=""
+                            id=""
+                            class="btn btn-danger"
+                            href="index.php?txtID=<?php echo $registros['ID']; ?>"
+                            role="button"
+                            >Eliminar</a
+                        >
+                        </td>
                     </tr>
+                    <?php };?>
                 </tbody>
             </table>
         </div>
-        
-        
     </div>
     <div class="card-footer text-muted"></div>
 </div>
