@@ -188,96 +188,32 @@ include("admin/bd.php");
             </div>
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                <h5 class="mt-4">Trabajo 1</h5>
                     <div class="portfolio-item image-zoom">
                         <div class="image-zoom-wrapper">
                             <img src="./assets/images/rb1.jpg" alt="">
                         </div>
                         <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
                     </div>
-                    <div class="portfolio-item image-zoom mt-4">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/rb1.jpg" alt="">
-                        </div>
-                        <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
-                    </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
-                    <div class="portfolio-item image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/rb1.jpg" alt="">
-                        </div>
-                        <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
-                    </div>
-                    <div class="portfolio-item image-zoom mt-4">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/rb1.jpg" alt="">
-                        </div>
-                        <a href="./assets/images/project-4.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
-                    <div class="portfolio-item image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/rb1.jpg" alt="">
-                        </div>
-                        <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
-                    </div>
-                    <div class="portfolio-item image-zoom mt-4">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/rb1.jpg" alt="">
-                        </div>
-                        <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-
-    <!-- TEAM -->
-    <section id="team" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
-                    <div class="section-title">
-                        <h1 class="display-4 fw-semibold">Team</h1>
-                        <div class="line"></div>
-                        <p>We love to craft digital experiances for brands rather than crap and more lorem ipsums and do crazy skills</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 text-center ">
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
-                    <div class="team-member image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/person-1.jpg" alt="">
-                        </div>
-                        <div class="team-member-content">
-                            <h4 class="text-white">Jon Doe</h4>
-                            <p class="mb-0 text-white">Webflow Artist</p>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
-                    <div class="team-member image-zoom">
+                <h5 class="mt-4">Trabajo 2</h5>
+                    <div class="portfolio-item image-zoom">
                         <div class="image-zoom-wrapper">
-                            <img src="./assets/images/person-2.jpg" alt="">
+                            <img src="./assets/images/rb1.jpg" alt="">
                         </div>
-                        <div class="team-member-content">
-                            <h4 class="text-white">Jon Doe</h4>
-                            <p class="mb-0 text-white">Webflow Artist</p>
-                        </div>
+                        <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
                     </div>
                 </div>
+
                 <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
-                    <div class="team-member image-zoom">
+                <h5 class="mt-4">Trabajo 3</h5>
+                    <div class="portfolio-item image-zoom">
                         <div class="image-zoom-wrapper">
-                            <img src="./assets/images/person-3.jpg" alt="">
+                            <img src="./assets/images/rb1.jpg" alt="">
                         </div>
-                        <div class="team-member-content">
-                            <h4 class="text-white">Jon Doe</h4>
-                            <p class="mb-0 text-white">Webflow Artist</p>
-                        </div>
+                        <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
                     </div>
                 </div>
             </div>
