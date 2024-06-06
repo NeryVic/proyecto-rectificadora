@@ -6,7 +6,7 @@ if ($_POST) {
     print_r($_FILES);
     
     // Recepción de valores del formulario.
-    $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : "";
+    $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "";
     $txtID = (isset($_POST['txtID']) ) ? $_POST['txtID'] : "";
     // Recepción de imagen
     $imagen = (isset($_FILES['imagen']['name'])) ? $_FILES['imagen']['name'] : "";
@@ -29,14 +29,14 @@ if ($_POST) {
     }
     
     // Inserción de los datos en la base de datos.
-    $sentencia = $conexion->prepare("INSERT INTO `tabla_portafolio` (`ID`, `imagen`, `descripcion`) 
-    VALUES (NULL, :imagen, :descripcion)");
+    $sentencia = $conexion->prepare("INSERT INTO `tabla_portafolio` (`ID`, `imagen`, `titulo`) 
+    VALUES (NULL, :imagen, :titulo)");
     $sentencia->bindParam(":imagen", $nombreArchivo);
-    $sentencia->bindParam(":descripcion", $descripcion);
+    $sentencia->bindParam(":titulo", $titulo);
     $sentencia->execute();
     
     $mensaje = "Registro creado exitosamente.";
-    header("Location: index.php?mensaje=" . $mensaje);
+    header("Location: index.php?mensaje=" .$mensaje);
     exit;
 }
 
@@ -61,14 +61,14 @@ include("../../templates/header.php");
             </div>
 
             <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripción:</label>
+                <label for="descripcion" class="form-label">Título:</label>
                 <input
                     type="text"
                     class="form-control"
-                    name="descripcion"
-                    id="descripcion"
+                    name="titulo"
+                    id="titulo"
                     aria-describedby="helpId"
-                    placeholder="Descripción"
+                    placeholder="Título"
                 />
             </div>
 

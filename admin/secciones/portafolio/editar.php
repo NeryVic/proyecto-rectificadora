@@ -10,13 +10,13 @@ if (isset($_GET['txtID'])) {
     $registro = $sentencia->fetch(PDO::FETCH_LAZY);
 
     $imagen = $registro['imagen'];
-    $descripcion = $registro['descripcion'];
+    $titulo = $registro['titulo'];
 }
 
 if ($_POST) {
     // Recepción de valores del formulario.
     $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
-    $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : "";
+    $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "";
     
     // Recepción de la nueva imagen si se sube una.
     $nuevaImagen = (isset($_FILES['imagen']['name'])) ? $_FILES['imagen']['name'] : "";
@@ -46,9 +46,9 @@ if ($_POST) {
     }
     
     // Actualización de los datos en la base de datos.
-    $sentencia = $conexion->prepare("UPDATE tabla_portafolio SET  imagen = :imagen, descripcion = :descripcion WHERE ID = :id");
+    $sentencia = $conexion->prepare("UPDATE tabla_portafolio SET  imagen = :imagen, titulo = :titulo WHERE ID = :id");
     $sentencia->bindParam(":imagen", $nombreArchivo);
-    $sentencia->bindParam(":descripcion", $descripcion);
+    $sentencia->bindParam(":titulo", $titulo);
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
 
