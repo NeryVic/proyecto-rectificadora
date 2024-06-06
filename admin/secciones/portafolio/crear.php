@@ -7,7 +7,7 @@ if ($_POST) {
     
     // Recepción de valores del formulario.
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : "";
-    
+    $txtID = (isset($_POST['txtID']) ) ? $_POST['txtID'] : "";
     // Recepción de imagen
     $imagen = (isset($_FILES['imagen']['name'])) ? $_FILES['imagen']['name'] : "";
     $fecha = new DateTime();

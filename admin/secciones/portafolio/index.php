@@ -5,7 +5,7 @@ if(isset($_GET['txtID'])){
     //borrar dicho registro con el ID correspondiente.
     
     $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
-    $sentencia=$conexion->prepare("DELETE FROM `tabla_servicios` WHERE id=:id ");
+    $sentencia=$conexion->prepare("DELETE FROM `tabla_portafolio` WHERE id=:id ");
 
     $sentencia->bindParam(":id",$txtID);
 
