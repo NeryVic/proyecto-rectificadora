@@ -51,6 +51,7 @@ include("../../templates/header.php");?>
                         <td scope="row"><?php echo $registros['ID'];?></td>
                         <td><img width="50" height="50" src="../../assets/img/Repuestos/ <?php echo $registro['imagen']; ?>" alt="Imagen del portafolio"></td>
                         <td><?php echo $registros['titulo'];?></td>
+                        <td><?php echo $registros['descripcion'];?></td>
                         <td>
                         <a
                             name=""
