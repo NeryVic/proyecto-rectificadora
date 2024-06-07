@@ -1,8 +1,10 @@
-const btn = document.getElementById('submit-btn');
+
+const btn = document.getElementById('submit_btn');
 const form = document.getElementById('contactForm');
 const nameInput = document.getElementById('from_name');
 const emailInput = document.getElementById('email_id');
 const messageInput = document.getElementById('message');
+const asuntoInput = document.getElementById('asunto');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -10,21 +12,21 @@ form.addEventListener('submit', function(event) {
   // Validación del nombre
   const name = nameInput.value;
   if (name === '') {
-    swal('Por favor, ingresa tu nombre.');
+    swal("Por favor", "ingrese su nombre", "error");
     return;
   }
 
   // Validación del email
   const email = emailInput.value;
   if (email === '') {
-    swal('Por favor, ingresa tu correo electrónico.');
+    swal("Por favor", "ingresa tu correo electrónico.", "error");
     return;
   }
 
   // Validación del mensaje
   const message = messageInput.value;
   if (message === '' || message.trim() === '' || message.length <= 20) {
-    swal('Por favor, ingresa un mensaje mayor a 20 caracteres.');
+    swal("Por favor", "ingresa un mensaje mayor a 20 caracteres.", "error");
     return;
   }
 
@@ -32,7 +34,7 @@ form.addEventListener('submit', function(event) {
   btn.value = 'enviando...';
 
   const serviceID = 'default_service';
-  const templateID = 'template_v4sj38e';
+  const templateID = 'template_m56uvew';
 
   emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
@@ -43,9 +45,9 @@ form.addEventListener('submit', function(event) {
       nameInput.value = '';
       emailInput.value = '';
       messageInput.value = '';
-      phoneInput.value = '';
+      asuntoInput.value = '';
     }, (err) => {
       btn.value = 'enviar';
-      alert(JSON.stringify(err));
+      alert('Error al enviar el formulario', '', err);
     });
 });
