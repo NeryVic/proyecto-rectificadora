@@ -28,7 +28,7 @@ if ($_POST) {
         $tmpImagen = $_FILES['imagen']['tmp_name'];
 
         // Verificar si el directorio existe antes de intentar mover el archivo.
-        $rutaDestino = "../../assets/img/portafolio/";
+        $rutaDestino = "../../../assets/img/portafolio/";
         if (!is_dir($rutaDestino)) {
             mkdir($rutaDestino, 0777, true);
         }
@@ -73,14 +73,14 @@ include("../../templates/header.php");
                 <label for="imagen" class="form-label">Imagen:</label>
                 <br />
                 <?php if ($imagen != ""): ?>
-                    <img src="../../assets/img/portafolio/<?php echo $imagen; ?>" width="100" alt="Imagen actual" />
+                    <img src="../../../assets/img/portafolio/<?php echo $imagen; ?>" width="75" height="75" alt="Imagen actual" />
                 <?php endif; ?>
                 <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen" aria-describedby="fileHelpId" />
             </div>
 
             <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripción:</label>
-                <input value="<?php echo $descripcion; ?>" type="text" class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Descripción" />
+                <label for="descripcion" class="form-label">Título:</label>
+                <input value="<?php echo $titulo; ?>" type="text" class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Título" />
             </div>
 
             <button type="submit" class="btn btn-success">Actualizar</button>

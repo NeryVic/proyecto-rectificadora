@@ -29,11 +29,7 @@ if ($_POST) {
         $tmpImagen = $_FILES['imagen']['tmp_name'];
 
         // Verificar si el directorio existe antes de intentar mover el archivo.
-        $rutaDestino = "../../assets/img/Repuestos/";
-        if (!is_dir($rutaDestino)) {
-            mkdir($rutaDestino, 0777, true);
-        }
-
+        $rutaDestino = "../../../assets/img/Repuestos/";
         // Mover la nueva imagen a su destino.
         if (move_uploaded_file($tmpImagen, $rutaDestino . $nombreArchivo)) {
             // Eliminar la imagen anterior si existe.
@@ -61,12 +57,9 @@ if ($_POST) {
 
 
 include("../../templates/header.php");?> 
-
-
-
-editar Repuestos
+</br>
 <div class="card">
-    <div class="card-header">Editar producto del portafolio</div>
+    <div class="card-header">Editar producto</div>
     <div class="card-body">
         <form action="" enctype="multipart/form-data" method="post">
             <div class="mb-3">
@@ -78,7 +71,7 @@ editar Repuestos
                 <label for="imagen" class="form-label">Imagen:</label>
                 <br />
                 <?php if ($imagen != ""): ?>
-                    <img src="../../assets/img/portafolio/<?php echo $imagen; ?>" width="100" alt="Imagen actual" />
+                    <img src="../../../assets/img/repuestos/<?php echo $imagen; ?>" width="75" height="75" alt="Imagen actual" />
                 <?php endif; ?>
                 <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen" aria-describedby="fileHelpId" />
             </div>

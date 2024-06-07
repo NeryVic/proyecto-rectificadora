@@ -48,7 +48,8 @@ include("../../templates/header.php");?>
                 <tr class="">
                     <?php foreach($lista_portafolio as $registros){;?>
                         <td scope="row"><?php echo $registros['ID'];?></td>
-                        <td><img width="50" height="50" src="../../assets/img/portafolio/ <?php echo $registro['imagen']; ?>" alt="Imagen del portafolio"></td>
+                        <td>
+                        <img src="../../../assets/img/portafolio/<?php echo $imagen; ?>" width="75" height="75" alt="Imagen del portafolio"></td>
                         <td><?php echo $registros['titulo'];?></td>
                         <td>
                         <a
