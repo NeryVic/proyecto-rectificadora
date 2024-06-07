@@ -28,6 +28,7 @@ include("admin/bd.php");
     </script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar">
@@ -51,7 +52,7 @@ include("admin/bd.php");
                         <a class="nav-link" href="#about">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#blog">Producto</a>
+                        <a class="nav-link" href="#producto">Producto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#portfolio">Portafolio</a>
@@ -137,7 +138,7 @@ include("admin/bd.php");
     </section>
 
      <!-- BLOG -->
-     <section id="blog" class="section-padding">
+     <section id="producto" class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
@@ -363,38 +364,34 @@ include("admin/bd.php");
                         <div class="social-icons">
                             <a href="#"><i class="ri-twitter-fill"></i></a>
                             <a href="#"><i class="ri-instagram-fill"></i></a>
-                            <a href="#"><i class="ri-github-fill"></i></a>
-                            <a href="#"><i class="ri-dribbble-fill"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <h5 class="mb-0 text-white">SERVICES</h5>
+                        <h5 class="mb-0 text-white">SERVICIOS</h5>
                         <div class="line"></div>
                         <ul>
-                            <li><a href="#">UI Design</a></li>
-                            <li><a href="#">UX Design</a></li>
-                            <li><a href="#">Branding</a></li>
-                            <li><a href="#">Logo Designing</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <h5 class="mb-0 text-white">ABOUT</h5>
-                        <div class="line"></div>
-                        <ul>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Career</a></li>
+                            <li><a href="#services">Planos</a></li>
+                            <li><a href="#services">Rectificación de tapas de cilindros</a></li>
+                            <li><a href="#services">Soldaduras</a></li>
+                            <li><a href="#services">Rectificación de Blocks</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <h5 class="mb-0 text-white">CONTACT</h5>
                         <div class="line"></div>
                         <ul>
-                            <li>New York, NY 3300</li>
-                            <li>(414) 586 - 3017</li>
-                            <li>www.example.com</li>
+                            <li>Carlos Gardel</li>
+                            <li>Telefono</li>
+                            <li>El Colorado</li>
+                            <li>Formosa</li>
                         </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">UBICACIÓN</h5>
+                        <div class="line"></div>
+                        <div id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3576.7744742297996!2d-59.37216428978408!3d-26.301410167842675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDE4JzA1LjEiUyA1OcKwMjInMTAuNSJX!5e0!3m2!1ses-419!2sar!4v1717787435035!5m2!1ses-419!2sar" width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -419,6 +416,7 @@ include("admin/bd.php");
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/contact.js"></script>
+    
     
 </body>
 
