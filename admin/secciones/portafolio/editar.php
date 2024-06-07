@@ -79,8 +79,8 @@ include("../../templates/header.php");
             </div>
 
             <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripción:</label>
-                <input value="<?php echo $descripcion; ?>" type="text" class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Descripción" />
+                <label for="descripcion" class="form-label">Título:</label>
+                <input value="<?php echo $titulo; ?>" type="text" class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Título" />
             </div>
 
             <button type="submit" class="btn btn-success">Actualizar</button>

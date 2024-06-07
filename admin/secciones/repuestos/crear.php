@@ -16,11 +16,11 @@ if ($_POST) {
     $tmpImagen = $_FILES['imagen']['tmp_name'];
 
     if ($tmpImagen != "") {
-        $rutaDestino = "../../../assets/img/Repuestos/" . $nombreArchivo;
+        $rutaDestino = "../../assets/img/Repuestos/" . $nombreArchivo;
         
         // Verificar si el directorio existe antes de intentar mover el archivo
-        if (!is_dir("../../../assets/img/Repuestos/")) {
-            mkdir("../../../assets/img/Repuestos/", 0777, true);
+        if (!is_dir("../../assets/img/Repuestos/")) {
+            mkdir("../../assets/img/Repuestos/", 0777, true);
         }
         
         if (!move_uploaded_file($tmpImagen, $rutaDestino)) {
