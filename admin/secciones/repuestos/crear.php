@@ -16,23 +16,13 @@ if ($_POST) {
     $tmpImagen = $_FILES['imagen']['tmp_name'];
 
     if ($tmpImagen != "") {
-        $rutaDestino = "../../assets/img/Repuestos/" . $nombreArchivo;
-        
-        // Verificar si el directorio existe antes de intentar mover el archivo
-        if (!is_dir("../../assets/img/Repuestos/")) {
-            mkdir("../../assets/img/Repuestos/", 0777, true);
-        }
-        
-        if (!move_uploaded_file($tmpImagen, $rutaDestino)) {
-            echo "Error al mover el archivo a su destino.";
-            exit;
-        }
+        move_uploaded_file($tmpImagen, "../../../assets/img/Repuestos/".$nombreArchivo);
     }
     
     // Inserción de los datos en la base de datos.
     $sentencia = $conexion->prepare("INSERT INTO `tabla_repuestos` (`ID`, `imagen`, `titulo`, `descripcion`) 
     VALUES (NULL, :imagen, :titulo, :descripcion)");
-    $sentencia->bindParam(":imagen", $nombreArchivo);
+    $sentencia->bindParam(":imagen", $imagen);
     $sentencia->bindParam(":titulo", $titulo);
     $sentencia->bindParam(":descripcion", $descripcion);
     $sentencia->execute();

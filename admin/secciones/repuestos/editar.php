@@ -29,11 +29,7 @@ if ($_POST) {
         $tmpImagen = $_FILES['imagen']['tmp_name'];
 
         // Verificar si el directorio existe antes de intentar mover el archivo.
-        $rutaDestino = "../../assets/img/Repuestos/";
-        if (!is_dir($rutaDestino)) {
-            mkdir($rutaDestino, 0777, true);
-        }
-
+        $rutaDestino = "../../../assets/img/Repuestos/";
         // Mover la nueva imagen a su destino.
         if (move_uploaded_file($tmpImagen, $rutaDestino . $nombreArchivo)) {
             // Eliminar la imagen anterior si existe.

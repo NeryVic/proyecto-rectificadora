@@ -28,7 +28,7 @@ if ($_POST) {
         $tmpImagen = $_FILES['imagen']['tmp_name'];
 
         // Verificar si el directorio existe antes de intentar mover el archivo.
-        $rutaDestino = "../../assets/img/portafolio/";
+        $rutaDestino = "../../../assets/img/portafolio/";
         if (!is_dir($rutaDestino)) {
             mkdir($rutaDestino, 0777, true);
         }
