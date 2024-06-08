@@ -1,11 +1,33 @@
 <?php 
 include("../../bd.php");
 
+if(isset($_GET['txtID'])){
+    // Borrar registros
+    $txtID=(isset ($_GET['txtID']) )? $_GET['txtID']:"";
 
-//seleccionar registros
-    $sentencia=$conexion->prepare("SELECT * FROM `tabla_portafolio`");
+    // Obtener nombre de la imagen para eliminarla
+    $sentencia = $conexion->prepare("SELECT imagen FROM tabla_portfolio WHERE ID=:ID");
+    $sentencia->bindParam(":ID", $txtID);
     $sentencia->execute();
-    $lista_portafolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    $registro_imagen  =  $sentencia->fetch(PDO::FETCH_LAZY);
+
+    // Verificar si la imagen existe y eliminarla
+    if(isset($registro_imagen["imagen"])){
+        // $ruta_imagen = "../../../assets/img/portfolio/".$registro_imagen["imagen"];
+         if(file_exists("../../../assets/img/portfolio/".$registro_imagen["imagen"])){
+             unlink("../../../assets/img/portfolio/".$registro_imagen["imagen"]);
+         }
+     }
+      // Eliminar el registro de la base de datos 
+    $sentencia = $conexion->prepare("DELETE FROM tbl_portafolio WHERE `tabla_portfolio`.`ID`=:ID");
+    $sentencia->bindParam(":ID", $txtID);
+    $sentencia->execute();
+}
+
+// Seleccionar registros
+$sentencia = $conexion->prepare("SELECT * FROM tabla_portfolio");
+$sentencia->execute();
+$lista_portfolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 
 include("../../templates/header.php");?> 
@@ -37,29 +59,19 @@ include("../../templates/header.php");?>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">1</td>
-                        <td>Prueba</td>
-                        <td>imagen.jpg</td>
-                        <td>
-                        <a
-                            name=""
-                            id=""
-                            class="btn btn-info"
-                            href="editar.php"
-                            role="button"
-                            >Editar</a
-                        >
-                        <a
-                            name=""
-                            id=""
-                            class="btn btn-danger"
-                            href="index.php"
-                            role="button"
-                            >Eliminar</a
-                        >
+                <?php foreach($lista_portfolio as $registro){ ?>
+                <tr class="">
+                    <td><?php echo $registro['ID']; ?></td>
+                    <td><?php echo $registro['titulo']; ?></td>
+                <td>
+                    <img width="50" height="50" src="../../../assets/img/portfolio/<?php echo $registro['imagen']; ?>" alt="Imagen del portafolio">
+                    </td>
+                        <td scope="col">
+                            <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
+                            <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>
                         </td>
-                    </tr>
+                </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
