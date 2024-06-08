@@ -3,20 +3,32 @@ include("../../bd.php");
 
 if(isset($_GET['txtID'])){
     //borrar dicho registro con el ID correspondiente.
-    
-    $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
-    $sentencia=$conexion->prepare("DELETE FROM `tabla_repuestos` WHERE id=:id ");
-
-    $sentencia->bindParam(":id",$txtID);
-
+    $txtID=(isset ($_GET['txtID']) )? $_GET['txtID']:"";
+    // Obtener nombre de la imagen para eliminarla
+    $sentencia = $conexion->prepare("SELECT imagen FROM tabla_repuestos WHERE ID=:ID");
+    $sentencia->bindParam(":ID", $txtID);
     $sentencia->execute();
+    $registro_imagen  =  $sentencia->fetch(PDO::FETCH_LAZY);
+
+
+// Verificar si la imagen existe y eliminarla
+if(isset($registro_imagen["imagen"])){
+    
+     if(file_exists("../../../assets/img/producto/".$registro_imagen["imagen"])){
+         unlink("../../../assets/img/producto/".$registro_imagen["imagen"]);
+     }
+ }
+
+// Eliminar el registro de la base de datos 
+$sentencia = $conexion->prepare("DELETE FROM tabla_repuestos WHERE `tabla_repuestos`.`ID`=:ID");
+$sentencia->bindParam(":ID", $txtID);
+$sentencia->execute();
 }
 
-//seleccionar registros
-$sentencia=$conexion->prepare("SELECT * FROM `tabla_repuestos`");
+// Seleccionar registros
+$sentencia = $conexion->prepare("SELECT * FROM tabla_repuestos");
 $sentencia->execute();
-$lista_repuestos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-
+$lista_producto = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 include("../../templates/header.php");?>
 </br>
@@ -46,11 +58,12 @@ include("../../templates/header.php");?>
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach($lista_producto as $registros){;?>
                 <tr class="">
-                    <?php foreach($lista_repuestos as $registros){;?>
                         <td scope="row"><?php echo $registros['ID'];?></td>
                         <td>
-                        <img src="/assets/img/Repuestos/ <?php echo $registros['imagen'];?>" />
+                        <img src="../../../assets/img/producto/ <?php echo $registros['imagen'];?>" />
+                        </td>
                         <td><?php echo $registros['titulo'];?></td>
                         <td><?php echo $registros['descripcion'];?></td>
                         <td>

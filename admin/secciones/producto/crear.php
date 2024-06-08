@@ -16,7 +16,7 @@ if ($_POST) {
     $tmpImagen = $_FILES['imagen']['tmp_name'];
 
     if ($tmpImagen != "") {
-        move_uploaded_file($tmpImagen, "../../../assets/img/Repuestos/".$nombreArchivo);
+        move_uploaded_file($tmpImagen, "../../../assets/img/producto/".$nombreArchivo);
     }
     
     // Inserción de los datos en la base de datos.
