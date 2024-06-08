@@ -45,7 +45,7 @@ include("../../templates/header.php");?>
         
     <form action="" method="post">
         <div class="mb-3">
-            <label for="txt" class="form-label">ID:</label>
+            <label for="txtID" class="form-label">ID:</label>
             <input
                 readonly value="<?php echo$txtID;?>"
                 type="text"

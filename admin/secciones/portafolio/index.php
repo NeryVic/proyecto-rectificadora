@@ -19,7 +19,7 @@ if(isset($_GET['txtID'])){
          }
      }
       // Eliminar el registro de la base de datos 
-    $sentencia = $conexion->prepare("DELETE FROM tbl_portafolio WHERE `tabla_portfolio`.`ID`=:ID");
+    $sentencia = $conexion->prepare("DELETE FROM tabla_portfolio WHERE `tabla_portfolio`.`ID`=:ID");
     $sentencia->bindParam(":ID", $txtID);
     $sentencia->execute();
 }
@@ -68,7 +68,12 @@ include("../../templates/header.php");?>
                     </td>
                         <td scope="col">
                             <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
-                            <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>
+                            <a id="btnEliminar" href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button" onclick="return confirmarEliminacion();">Eliminar</a>
+                            <script>
+                                    function confirmarEliminacion() {
+                                        return confirm("¿Estás seguro de que deseas eliminar este registro?");
+                                        }
+                            </script>
                         </td>
                 </tr>
                     <?php } ?>

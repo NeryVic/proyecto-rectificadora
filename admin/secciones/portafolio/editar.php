@@ -1,7 +1,7 @@
 <?php
 include("../../bd.php");
 $nuevaImagen = ""; // Inicializa la variable $nuevaImagen
-$titulo = ""; // Cambié $Titulo a $titulo para que coincida con la asignación en el formulario
+$titulo = ""; 
 if(isset($_GET['txtID'])){
     // Recuperar los datos del ID correspondiente
     $txtID = $_GET['txtID'];      
@@ -12,6 +12,7 @@ if(isset($_GET['txtID'])){
 
     // Asignar los valores del registro a las variables
     $titulo = $registro['titulo']; 
+    
     $imagen = $registro['imagen'];
 }
 
@@ -58,9 +59,9 @@ include("../../templates/header.php"); ?>
     <div class="card-body">
     <form action="" enctype="multipart/form-data" method="post">
         <div class="mb-3">
-            <label for="" class="form-label">ID:</label>
+            <label for="txtID" class="form-label">ID:</label>
             <input
-                type readonly="text"
+                readonly value="<?php echo$txtID;?>"
                 class="form-control"
                 name="txtID"
                 id="txtID"
