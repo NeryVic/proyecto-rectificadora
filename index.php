@@ -6,7 +6,7 @@ include("admin/bd.php");
     $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -308,6 +308,57 @@ include("admin/bd.php");
                 <?php } ;?>
             </div>
                 
+    </section>
+
+    <section class="section-padding bg-dark">
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/1.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/2.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/3.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/4.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/5.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/6.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/7.png" alt="">
+            </div>
+
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/8.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/9.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/10.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/11.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/12.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/13.png" alt="">
+            </div>
+            <div class="slide">
+                <img class="img-slide" src="./assets/images/slider/14.png" alt="">
+            </div>
+        </div>
+    </div>
+
     </section>
 
     <!-- CONTACT -->
