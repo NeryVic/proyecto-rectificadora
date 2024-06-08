@@ -44,7 +44,7 @@ if ($_POST) {
     
     // Actualización de los datos en la base de datos.
     $sentencia = $conexion->prepare("UPDATE tabla_repuestos SET  imagen = :imagen, titulo = :titulo, descripcion = :descripcion WHERE ID = :id");
-    $sentencia->bindParam(":imagen", $nombreArchivo);
+    $sentencia->bindParam(":imagen", $imagen);
     $sentencia->bindParam(":titulo", $titulo);
     $sentencia->bindParam(":descripcion", $descripcion);
     $sentencia->bindParam(":id", $txtID);
@@ -70,9 +70,8 @@ include("../../templates/header.php");?>
             <div class="mb-3">
                 <label for="imagen" class="form-label">Imagen:</label>
                 <br />
-                <?php if ($imagen != ""): ?>
-                    <img src="../../../assets/img/repuestos/<?php echo $imagen; ?>" width="75" height="75" alt="Imagen actual" />
-                <?php endif; ?>
+                    <img src="../../../assets/img/Repuestos/ <?php echo $imagen; ?>" width="75" height="75" alt="Imagen actual" />
+
                 <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen" aria-describedby="fileHelpId" />
             </div>
 

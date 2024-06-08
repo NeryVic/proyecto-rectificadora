@@ -49,7 +49,8 @@ include("../../templates/header.php");?>
                 <tr class="">
                     <?php foreach($lista_repuestos as $registros){;?>
                         <td scope="row"><?php echo $registros['ID'];?></td>
-                        <td><img width="75" height="75" src="../../../assets/img/Repuestos/<?php echo $registros['imagen']; ?>" alt="Imagen de repuesto"></td>
+                        <td>
+                        <img src="/assets/img/Repuestos/ <?php echo $registros['imagen'];?>" />
                         <td><?php echo $registros['titulo'];?></td>
                         <td><?php echo $registros['descripcion'];?></td>
                         <td>
