@@ -4,6 +4,10 @@ include("admin/bd.php");
     $sentencia=$conexion->prepare("SELECT * FROM `tabla_servicios`");
     $sentencia->execute();
     $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    //Seleccionar registros de portafolio
+    $sentencia = $conexion->prepare("SELECT * FROM `tabla_portfolio`");
+    $sentencia-> execute();
+    $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -88,6 +92,13 @@ include("admin/bd.php");
 
     <!-- ABOUT -->
     <section id="about" class="section-padding">
+        <!-- bton de wssp-->
+        <div class="wssp wssp-container">
+              <a href="https://api.whatsapp.com/send?phone=5493704016066" target="_blank" class="wsspss">
+                <img class="wsspp-img" src="./assets/images/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
+              </a>
+              </div>
+                <!-- bton de wssp-->
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="50">
@@ -137,7 +148,7 @@ include("admin/bd.php");
         </div>
     </section>
 
-     <!-- BLOG -->
+     <!-- PRODUCT -->
      <section id="producto" class="section-padding">
         <div class="container">
             <div class="row">
@@ -243,40 +254,22 @@ include("admin/bd.php");
                     <div class="section-title">
                         <h1 class="display-4 fw-semibold">Nuestro trabajo</h1>
                         <div class="line"></div>
-                        <p>We love to craft digital experiances for brands rather than crap and more lorem ipsums and do crazy skills</p>
+                        <p>Te invitamos a ver algunos de nuestros trabajos realizados</p>
                     </div>
                 </div>
             </div>
             <div class="row g-4">
+                <?php foreach($lista_portfolio as $registros){;?>
                 <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
-                <h5 class="mt-4">Trabajo 1</h5>
+                <h5 class="mt-4"><?php echo $registros["titulo"] ;?></h5>
                     <div class="portfolio-item image-zoom">
                         <div class="image-zoom-wrapper">
-                            <img src="./assets/images/rb1.jpg" alt="">
+                            <img src="./assets/img/portfolio/<?php echo $registros['imagen'] ?>" alt="">
                         </div>
-                        <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                        <a href="./assets/img/portfolio/<?php echo $registros['imagen'] ?>" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
                     </div>
                 </div>
-
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
-                <h5 class="mt-4">Trabajo 2</h5>
-                    <div class="portfolio-item image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/rb1.jpg" alt="">
-                        </div>
-                        <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
-                <h5 class="mt-4">Trabajo 3</h5>
-                    <div class="portfolio-item image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/rb1.jpg" alt="">
-                        </div>
-                        <a href="./assets/images/rb1.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
-                    </div>
-                </div>
+                <?php } ;?>
             </div>
         </div>
     </section>
@@ -298,7 +291,7 @@ include("admin/bd.php");
                 <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="150">
                     <div class="service theme-shadow p-lg-5 p-4">
                         <div class="iconbox">
-                            <i class="ri-pen-nib-fill"></i>
+                        <i class="ri-check-double-line"></i>
                             
                         </div>
                         <h5 class="mt-4 mb-3"><?php echo $registros["titulo"] ;?></h5>
@@ -362,7 +355,7 @@ include("admin/bd.php");
     </section>
 
     <!-- CONTACT -->
-    <section class="section-padding bg-light" id="contact">
+    <section class="section-padding" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
@@ -441,7 +434,7 @@ include("admin/bd.php");
                         <h5 class="mb-0 text-white">UBICACIÓN</h5>
                         <div class="line"></div>
                         <div id="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3576.7744742297996!2d-59.37216428978408!3d-26.301410167842675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDE4JzA1LjEiUyA1OcKwMjInMTAuNSJX!5e0!3m2!1ses-419!2sar!4v1717787435035!5m2!1ses-419!2sar" width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3576.7744742297996!2d-59.37216428978408!3d-26.301410167842675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDE4JzA1LjEiUyA1OcKwMjInMTAuNSJX!5e0!3m2!1ses-419!2sar!4v1717787435035!5m2!1ses-419!2sar" width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>

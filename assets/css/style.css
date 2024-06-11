@@ -102,6 +102,30 @@ img {
     }
 }
 
+/*----------------------------------------------------*/
+
+.wssp-container {
+    position: fixed; /*mantiene se fija en la pantalla*/
+    bottom: 0;
+    padding-bottom: 45px;
+    right: 20px;
+    width: 5.333%;
+    z-index: 2; /*mantiene el elemento por encima de otros*/
+  }
+  
+  @media screen and (max-width: 768px) {
+    .wsspp-img {
+        display: flexbox;
+        margin: 0 auto;
+        width: 35px;
+        height: 45px;
+
+    }
+    
+  }
+
+  /*----------------------------------------------------*/
+
 
 /* BTN */
 .btn {
@@ -355,5 +379,9 @@ footer .line {
 .social-icons a:hover {
     background-color: var(--c-brand);
     color: white;
+}
+
+.map {
+    width: 100%;
 }
 
