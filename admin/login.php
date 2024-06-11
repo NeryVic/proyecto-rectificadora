@@ -16,66 +16,43 @@ include("./bd.php");
         />
 
         <!-- Bootstrap CSS v5.2.1 -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.css">
+        <link rel="stylesheet" href="../assets/css/login.css">
     </head>
 
     <body>
         <header>
             <!-- place navbar here -->
         </header>
+       
+        
         <main>
-        <div class="container">
-                <div class="row">
-                    <div
-                        class="col-4"
-                    >
-                        
-                    </div>
-                    <div
-                        class="col-4"
-                    >
-                        <div class="card">
-                            <div class="card-header">Login</div>
-                            <div class="card-body">
-                        <form action="" method="post">
-                        <div class="mb-3">
-                            <label for="txtusuario" class="form-label">Usuario:</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                name="txtusuario"
-                                id="txtusuario"
-                                aria-describedby="helpId"
-                                placeholder="Nombre del usuario"
-                            />
-                            
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Contraseña:</label>
-                            <input
-                                type="password"
-                                class="form-control"
-                                name="contraseña"
-                                id="contraseña"
-                                aria-describedby="helpId"
-                                placeholder="Contraseña"
-                            />
-                            
-                        </div>
-                        <a
-                            name=""
-                            id=""
-                            class="btn btn-primary"
-                            href="index.php"
-                            role="button"
-                            >Entrar</a>
-                        </form>
-                            </div>
-                            <div class="card-footer text-muted"></div>
-                        </div>
+        <div class="box">
+            <div class="container">
+                <div class="top-header">
+                    <span>Bassi-Rectificaciones</span>
+                    <header>INICIAR SESION</header>
+                </div>
+                <div class="input-field">
+                    <input type="text" class="input" placeholder="Usuario">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="input" placeholder="Contraseña" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-field">
+                    <input type="submit" class="submit" value="Iniciar Sesion">
+                </div>
+
+                <div class="bottom">
+                    <div class="left">
+                        <input type="checkbox" id="check">
+                        <label for="check">Recordar</label>
                     </div>
                 </div>
+                
             </div>
+        </div>
         </main>
         <footer>
             <!-- place footer here -->
