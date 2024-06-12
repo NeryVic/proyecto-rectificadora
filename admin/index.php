@@ -16,4 +16,4 @@
 
 
 
-<?php include("templates/foother.php");?> 
+<?php include("templates/footer.php");?> 

@@ -1,8 +1,34 @@
 <?php 
-include("./bd.php");
+session_start();
+if ($_POST) {
+    include("./bd.php");
+    
+    $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : "";
+    $password = isset($_POST['password']) ? $_POST['password'] : "";
 
+    // Seleccionar registros
+    $sentencia = $conexion->prepare("SELECT * FROM tabla_admin WHERE usuario = :usuario");
+    $sentencia->bindParam(":usuario", $usuario);
+    $sentencia->execute();
+
+    $lista_usuarios = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+    if ($lista_usuarios && password_verify($password, $lista_usuarios['password'])) {
+        // Login correcto
+        $_SESSION['usuario'] = $lista_usuarios['usuario'];
+        $_SESSION['logueado'] = true;
+        header("Location: index.php");
+        exit;
+    } else {
+        echo "<script src='../assets/plugins/Sweetalert/dist/sweetalert2.all.min.js'></script>";
+        echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire('¡Usuario o contraseña incorrecto!', '', 'error');
+                });
+              </script>";
+    }
+}
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -14,61 +40,43 @@ include("./bd.php");
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
-        <!-- Bootstrap CSS v5.2.1 -->
         <link rel="stylesheet" href="../assets/css/login.css">
     </head>
 
     <body>
-        <header>
-            <!-- place navbar here -->
-        </header>
-       
-        
-        <main>
-        <div class="box">
-            <div class="container">
-                <div class="top-header">
-                    <span>Bassi-Rectificaciones</span>
-                    <header>INICIAR SESION</header>
-                </div>
-                <div class="input-field">
-                    <input type="text" class="input" placeholder="Usuario">
-                    <i class="bx bx-user"></i>
-                </div>
-                <div class="input-field">
-                    <input type="password" class="input" placeholder="Contraseña" required>
-                    <i class="bx bx-lock-alt"></i>
-                </div>
-                <div class="input-field">
-                    <input type="submit" class="submit" value="Iniciar Sesion">
-                </div>
 
-                <div class="bottom">
-                    <div class="left">
-                        <input type="checkbox" id="check">
-                        <label for="check">Recordar</label>
+    <main>
+            <div class="box">
+                <div class="container">
+                    <div class="top-header">
+                        <span>Bassi-Rectificaciones</span>
+                        <header>INICIAR SESIÓN</header>
                     </div>
+                    <form method="POST" action="">
+                        <div class="input-field">
+                            <input type="text" class="input" placeholder="Usuario" name="usuario" required>
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" class="input" placeholder="Contraseña" name="password" required>
+                            <i class="bx bx-lock-alt"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" class="submit" value="Iniciar Sesión" id="btn">
+                        </div>
+                        <div class="bottom">
+                            <div class="left">
+                                <input type="checkbox" id="check">
+                                <label for="check">Recordar</label>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                
             </div>
-        </div>
         </main>
         <footer>
             <!-- place footer here -->
         </footer>
-        <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
-
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
     </body>
 </html>
 
