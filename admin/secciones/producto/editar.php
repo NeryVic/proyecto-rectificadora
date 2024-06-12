@@ -14,6 +14,8 @@ if (isset($_GET['txtID'])) {
     $imagen = $registro['imagen'];
     $titulo = $registro['titulo'];
     $descripcion = $registro['descripcion'];
+    
+
 }
 
 if ($_SERVER ["REQUEST_METHOD"] == "POST"){
@@ -21,15 +23,18 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
     $txtID =$_POST['txtID'];
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
+    $nuevaImagen = $_FILES['imagen']['name'];
     // Recepción de la nueva imagen si se sube una.
     if(isset($_FILES["imagen"]["name"]) && !empty($_FILES["imagen"]["name"])){
-    $nuevaImagen = $_FILES['imagen']['name'];
-    $nombreArchivo = date("YmdHis") . "_". $nuevaImagen;
-    move_uploaded_file($tmpImagen, "../../../assets/img/producto/" . $nombreArchivo);
+        $tmp_imagen = $_FILES["imagen"]["tmp_name"];
+        $nuevaImagen = $_FILES['imagen']['name'];
+        $nombreArchivo = date("YmdHis") . "_". $nuevaImagen;
+    move_uploaded_file($tmp_imagen, "../../../assets/img/producto/" . $nombreArchivo);
 //Eliminar imagen anterior si existe
-if(file_exists("../../../assets/img/producto/". $imagen)){
-    unlink("../../../assets/img/producto". $imagen);
+if(file_exists("../../../assets/img/producto/" . $imagen)){
+    unlink("../../../assets/img/producto/" . $imagen);
 }
+
 
 //Actualizar la tabla con la nueva imagen
 $sentencia = $conexion->prepare("UPDATE `tabla_repuestos` SET imagen=:imagen WHERE ID=:ID");
@@ -65,14 +70,14 @@ include("../../templates/header.php");?>
             <div class="mb-3">
                 <label for="imagen" class="form-label">Imagen:</label>
                 <br />
-                    <img width="50" height="50" src="../../../assets/img/producto/ <?php echo $imagen; ?>" alt="Imagen actual">
+                    <img width="75" height="75" src="../../../assets/img/producto/<?php echo $imagen; ?>" alt="Imagen actual">
 
                 <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen" aria-describedby="fileHelpId" />
             </div>
 
             <div class="mb-3">
                 <label for="titulo" class="form-label">Título:</label>
-                <input value="<?php echo $titulo; ?>" type="text" class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Descripción" />
+                <input value="<?php echo $titulo; ?>" type="text" class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Título" />
             </div>
 
             <div class="mb-3">
@@ -88,4 +93,4 @@ include("../../templates/header.php");?>
 </div>
 
 
-<?php include("../../templates/foother.php");?>
+<?php include("../../templates/footer.php");?>

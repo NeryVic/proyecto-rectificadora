@@ -84,7 +84,7 @@ include("../../templates/header.php"); ?>
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Imágen:</label>
-            <img width="50" height="50" src="../../../assets/img/portfolio/<?php echo $imagen; ?>" alt="Imagen actual">
+            <img width="75" height="75" src="../../../assets/img/portfolio/<?php echo $imagen; ?>" alt="Imagen actual">
             <input
                 type="file"
                 class="form-control"
@@ -103,4 +103,4 @@ include("../../templates/header.php"); ?>
 </div>
 
 
-<?php include("../../templates/foother.php"); ?>
+<?php include("../../templates/footer.php"); ?>

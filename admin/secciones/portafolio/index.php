@@ -64,7 +64,7 @@ include("../../templates/header.php");?>
                     <td><?php echo $registro['ID']; ?></td>
                     <td><?php echo $registro['titulo']; ?></td>
                 <td>
-                    <img width="50" height="50" src="../../../assets/img/portfolio/<?php echo $registro['imagen']; ?>" alt="Imagen del portafolio">
+                    <img width="75" height="75" src="../../../assets/img/portfolio/<?php echo $registro['imagen']; ?>" alt="Imagen del portafolio">
                     </td>
                         <td scope="col">
                             <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>

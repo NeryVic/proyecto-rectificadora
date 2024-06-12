@@ -62,7 +62,7 @@ include("../../templates/header.php");?>
                 <tr class="">
                         <td scope="row"><?php echo $registros['ID'];?></td>
                     <td>
-                        <img width="50" height="50" src="../../../assets/img/producto/<?php echo $registro['imagen']; ?>" alt="Imagen del producto">
+                        <img width="75" height="75" src="../../../assets/img/producto/<?php echo $registros['imagen']; ?>" alt="Imagen del producto">
                         </td>
                         <td><?php echo $registros['titulo'];?></td>
                         <td><?php echo $registros['descripcion'];?></td>
@@ -99,4 +99,4 @@ include("../../templates/header.php");?>
     <div class="card-footer text-muted"></div>
 </div>
 
-<?php include("../../templates/foother.php");?>
+<?php include("../../templates/footer.php");?>

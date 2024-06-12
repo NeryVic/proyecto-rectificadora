@@ -107,4 +107,4 @@ include("../../templates/header.php");?>
     <div class="card-footer text-muted"></div>
 </div>
 
-<?php include("../../templates/foother.php");?>
+<?php include("../../templates/footer.php");?>
