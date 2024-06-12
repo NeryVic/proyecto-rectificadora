@@ -2,31 +2,30 @@
 include("../../bd.php");
 
 if ($_POST) {
-    print_r($_POST);
-    print_r($_FILES);
     
     // Recepción de valores del formulario.
-    $descripcion = (isset($_POST['descripcion']) ) ? $_POST['descripcion'] : "";
     $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "";
+    $descripcion = (isset($_POST['descripcion']) ) ? $_POST['descripcion'] : "";
     $txtID = (isset($_POST['txtID']) ) ? $_POST['txtID'] : "";
     // Recepción de imagen
-    $imagen = (isset($_FILES['imagen']['name'])) ? $_FILES['imagen']['name'] : "";
+    $imagen = (isset($_FILES["imagen"]["name"])) ? $_FILES["imagen"]["name"] : "";
     $fecha = new DateTime();
-    $nombreArchivo = ($imagen != "") ? $fecha->getTimestamp() . "_" . $_FILES['imagen']['name'] : "";
-    $tmpImagen = $_FILES['imagen']['tmp_name'];
-
+    $nombreArchivo = ($imagen != "") ? $fecha->getTimestamp() . "_" .$imagen: "";
+    
+    $tmpImagen = $_FILES["imagen"]["tmp_name"];
     if ($tmpImagen != "") {
         move_uploaded_file($tmpImagen, "../../../assets/img/producto/".$nombreArchivo);
     }
-    
+
     // Inserción de los datos en la base de datos.
     $sentencia = $conexion->prepare("INSERT INTO `tabla_repuestos` (`ID`, `imagen`, `titulo`, `descripcion`) 
     VALUES (NULL, :imagen, :titulo, :descripcion)");
-    $sentencia->bindParam(":imagen", $imagen);
+    $sentencia->bindParam(":imagen", $nombreArchivo);
     $sentencia->bindParam(":titulo", $titulo);
     $sentencia->bindParam(":descripcion", $descripcion);
+
     $sentencia->execute();
-    
+
     $mensaje = "Registro creado exitosamente.";
     header("Location: index.php?mensaje=" .$mensaje);
     exit;

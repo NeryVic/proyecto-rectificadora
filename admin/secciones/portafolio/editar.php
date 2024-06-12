@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // Eliminar imagen anterior si existe
         if(file_exists("../../../assets/img/portfolio/" . $imagen)){
-            unlink("../../../assets/img/portfolio/" . $imagen);
+            unlink("../../../assets/img/portfolio" . $imagen);
         }
         
         // Actualizar la tabla con la nueva imagen

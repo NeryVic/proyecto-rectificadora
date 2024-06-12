@@ -13,7 +13,7 @@ if($_POST){
     if($tmp_imagen!="") {
         move_uploaded_file($tmp_imagen, "../../../assets/img/portfolio/".$nombre_archivo_imagen2);
     }
-
+// Inserción de los datos en la base de datos.
     $sentencia = $conexion->prepare("INSERT INTO `tabla_portfolio` (`ID`, `titulo`, `imagen`) 
     VALUES (NULL, :titulo, :imagen)");
 

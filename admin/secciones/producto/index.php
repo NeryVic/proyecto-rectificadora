@@ -14,10 +14,10 @@ if(isset($_GET['txtID'])){
 // Verificar si la imagen existe y eliminarla
 if(isset($registro_imagen["imagen"])){
     
-     if(file_exists("../../../assets/img/producto/".$registro_imagen["imagen"])){
-         unlink("../../../assets/img/producto/".$registro_imagen["imagen"]);
-     }
- }
+    if(file_exists("../../../assets/img/producto/".$registro_imagen["imagen"])){
+        unlink("../../../assets/img/producto/".$registro_imagen["imagen"]);
+    }
+}
 
 // Eliminar el registro de la base de datos 
 $sentencia = $conexion->prepare("DELETE FROM tabla_repuestos WHERE `tabla_repuestos`.`ID`=:ID");
@@ -61,12 +61,12 @@ include("../../templates/header.php");?>
                 <?php foreach($lista_producto as $registros){;?>
                 <tr class="">
                         <td scope="row"><?php echo $registros['ID'];?></td>
-                        <td>
-                        <img src="../../../assets/img/producto/ <?php echo $registros['imagen'];?>" />
+                    <td>
+                        <img width="50" height="50" src="../../../assets/img/producto/<?php echo $registro['imagen']; ?>" alt="Imagen del producto">
                         </td>
                         <td><?php echo $registros['titulo'];?></td>
                         <td><?php echo $registros['descripcion'];?></td>
-                        <td>
+                        <td scope="col">
                         <a
                             name=""
                             id=""
@@ -77,12 +77,18 @@ include("../../templates/header.php");?>
                         >
                         <a
                             name=""
-                            id=""
+                            id="btnEliminar"
                             class="btn btn-danger"
                             href="index.php?txtID=<?php echo $registros['ID']; ?>"
                             role="button"
+                            onclick="return confirmarEliminacion();"
                             >Eliminar</a
                         >
+                        <script>
+                                    function confirmarEliminacion() {
+                                        return confirm("¿Estás seguro de que deseas eliminar este registro?");
+                                        }
+                            </script>
                         </td>
                     </tr>
                     <?php };?>

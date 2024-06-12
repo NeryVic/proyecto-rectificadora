@@ -1,6 +1,8 @@
 <?php 
 include("../../bd.php");
-
+$nuevaImagen = ""; //Inicializa la variable nueva imagen.
+$titulo = "";
+$descripcion = "";
 if (isset($_GET['txtID'])) {
     // Recuperar los datos del ID seleccionado.
     $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
@@ -8,48 +10,41 @@ if (isset($_GET['txtID'])) {
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
     $registro = $sentencia->fetch(PDO::FETCH_LAZY);
-
+//Asignar los valores del registro a las variables
     $imagen = $registro['imagen'];
     $titulo = $registro['titulo'];
     $descripcion = $registro['descripcion'];
 }
 
-if ($_POST) {
-    // Recepción de valores del formulario.
-    $txtID = (isset($_POST['txtID']) ) ? $_POST['txtID'] : "";
-    $titulo = (isset($_POST['titulo']) ) ? $_POST['titulo'] : "";
-    $descripcion = (isset($_POST['descripcion']) )? $_POST['descripcion'] : "";
+if ($_SERVER ["REQUEST_METHOD"] == "POST"){
+    // Recuperar de valores del formulario.
+    $txtID =$_POST['txtID'];
+    $titulo = $_POST['titulo'];
+    $descripcion = $_POST['descripcion'];
     // Recepción de la nueva imagen si se sube una.
-    $nuevaImagen = (isset($_FILES['imagen']['name'])) ? $_FILES['imagen']['name'] : "";
-    $nombreArchivo = $imagen; // Mantener el nombre de la imagen existente por defecto.
-    
-    if ($nuevaImagen != "") {
-        $fecha = new DateTime();
-        $nombreArchivo = $fecha->getTimestamp() . "_" . $_FILES['imagen']['name'];
-        $tmpImagen = $_FILES['imagen']['tmp_name'];
+    if(isset($_FILES["imagen"]["name"]) && !empty($_FILES["imagen"]["name"])){
+    $nuevaImagen = $_FILES['imagen']['name'];
+    $nombreArchivo = date("YmdHis") . "_". $nuevaImagen;
+    move_uploaded_file($tmpImagen, "../../../assets/img/producto/" . $nombreArchivo);
+//Eliminar imagen anterior si existe
+if(file_exists("../../../assets/img/producto/". $imagen)){
+    unlink("../../../assets/img/producto". $imagen);
+}
 
-        // Verificar si el directorio existe antes de intentar mover el archivo.
-        $rutaDestino = "../../../assets/img/Repuestos/";
-        // Mover la nueva imagen a su destino.
-        if (move_uploaded_file($tmpImagen, $rutaDestino . $nombreArchivo)) {
-            // Eliminar la imagen anterior si existe.
-            if ($imagen != "" && file_exists($rutaDestino . $imagen)) {
-                unlink($rutaDestino . $imagen);
-            }
-        } else {
-            echo "Error al mover el archivo a su destino.";
-            exit;
-        }
+//Actualizar la tabla con la nueva imagen
+$sentencia = $conexion->prepare("UPDATE `tabla_repuestos` SET imagen=:imagen WHERE ID=:ID");
+$sentencia->bindParam(":imagen", $nombreArchivo);
+$sentencia->bindParam(":ID", $txtID);
+$sentencia->execute();
     }
     
     // Actualización de los datos en la base de datos.
-    $sentencia = $conexion->prepare("UPDATE tabla_repuestos SET  imagen = :imagen, titulo = :titulo, descripcion = :descripcion WHERE ID = :id");
-    $sentencia->bindParam(":imagen", $imagen);
+    $sentencia = $conexion->prepare("UPDATE `tabla_repuestos` SET titulo = :titulo, descripcion = :descripcion WHERE ID = :id");
     $sentencia->bindParam(":titulo", $titulo);
     $sentencia->bindParam(":descripcion", $descripcion);
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
-
+    
     $mensaje = "Registro modificado exitosamente.";
     header("Location: index.php?mensaje=" . $mensaje);
     exit;
@@ -70,7 +65,7 @@ include("../../templates/header.php");?>
             <div class="mb-3">
                 <label for="imagen" class="form-label">Imagen:</label>
                 <br />
-                    <img src="../../../assets/img/Repuestos/ <?php echo $imagen; ?>" width="75" height="75" alt="Imagen actual" />
+                    <img width="50" height="50" src="../../../assets/img/producto/ <?php echo $imagen; ?>" alt="Imagen actual">
 
                 <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen" aria-describedby="fileHelpId" />
             </div>
