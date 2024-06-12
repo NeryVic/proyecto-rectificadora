@@ -49,12 +49,12 @@ include("../../templates/header.php");
                             <span style="cursor: pointer;" onclick="mostrarOjito(this)">👁️</span>
                         </td>
                         <td scope="col">
-                            <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
-                            <a href="index.php?txtID=<?php echo $registro['ID']; ?>" onclick="return confirmarEliminacion()"  class="btn btn-danger" role="button">Eliminar</a>                        
+                            <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button"><i class="ri-list-settings-line"></i></a>
+                            <a href="index.php?txtID=<?php echo $registro['ID']; ?>" onclick="return confirmarEliminacion()"  class="btn btn-danger" role="button"><i class="ri-delete-bin-line"></i></a>                        
                             <script>
                                 function confirmarEliminacion() {
                                     return confirm("¿Estás seguro de que deseas eliminar este registro?");
-                                }
+                                    }
                             </script>
                         </td>
                     </tr>

@@ -17,6 +17,9 @@
             crossorigin="anonymous"
         />
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        
+        <!-- Incluye Remix Icon desde un CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     </head>
     <body>
         <header>
