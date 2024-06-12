@@ -1,5 +1,18 @@
 <?php 
 session_start();
+ // Tiempo de inactividad en segundos (5 minutos = 300 segundos)
+ $inactividad = 10;
+// Actualizar el tiempo de la sesión
+$_SESSION['tiempo'] = time();
+ // Verificar si la sesión está activa y si han pasado 5 minutos
+ if (isset($_SESSION['logueado']) && (time() - $_SESSION['tiempo'] > $inactividad)) {
+     session_unset();     // Limpiar todas las variables de sesión
+     session_destroy();   // Destruir la sesión
+     header("Location: login.php"); // Redirigir al usuario a la página de login
+     exit;
+ }
+ 
+
 if ($_POST) {
     include("./bd.php");
     
@@ -13,10 +26,10 @@ if ($_POST) {
 
     $lista_usuarios = $sentencia->fetch(PDO::FETCH_ASSOC);
 
-    //usuario root predefinido
+    //usr 
     $root = "root";
     $pass = "qwer1234";
-
+    //
 
     if ($lista_usuarios && password_verify($password, $lista_usuarios['password']) || $usuario == $root && $password == $pass) {
         // Login correcto
@@ -32,7 +45,11 @@ if ($_POST) {
                 });
               </script>";
     }
+   
 }
+
+
+
 ?>
 
 <!doctype html>
@@ -57,13 +74,13 @@ if ($_POST) {
                         <span>Bassi-Rectificaciones</span>
                         <header>INICIAR SESIÓN</header>
                     </div>
-                    <form method="POST" action="">
+                    <form method="POST" action="" id="loginForm">
                         <div class="input-field">
-                            <input type="text" class="input" placeholder="Usuario" name="usuario" required>
+                            <input type="text" class="input" id="usuario" placeholder="Usuario" name="usuario" required>
                             <i class="bx bx-user"></i>
                         </div>
                         <div class="input-field">
-                            <input type="password" class="input" placeholder="Contraseña" name="password" required>
+                            <input type="password" class="input" id="password" placeholder="Contraseña" name="password" required>
                             <i class="bx bx-lock-alt"></i>
                         </div>
                         <div class="input-field">
@@ -83,6 +100,7 @@ if ($_POST) {
             <!-- place footer here -->
         </footer>
     </body>
+    <script src="../assets/js/localStorage.js"></script>
 </html>
 
 

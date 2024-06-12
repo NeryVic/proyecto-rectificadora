@@ -33,7 +33,7 @@
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/portafolio/">Portafolio</a>
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/producto/">Producto</a>
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/admin/">Usuarios</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base;?>login.php">Cerrar sesión</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>login.php" session_destroy()>Cerrar sesión</a>
                 </div>
             </nav>
             
