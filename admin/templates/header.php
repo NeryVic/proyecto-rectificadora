@@ -27,26 +27,45 @@ if(!isset($_SESSION['usuario'])){
         
         <!-- Incluye Remix Icon desde un CDN -->
         <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <script src="http://localhost/proyecto-rectificadora/assets/js/expirador3000.js"></script>
     </head>
-    <body>
+    <body data=bs=theme="light">
         <header>
             <!-- place navbar here -->
-            <nav class="navbar navbar-expand navbar-light bg-light">
-                <div class="nav navbar-nav">
+            <nav class="navbar navbar-expand-lg lg-body-tertiary text-white">
+                <div class="nav navbar-nav d-flex ">
+                <button onclick="cambiarModo()" class="btn bg-primary rounded-fill"><i id="dl-icon" class="bi bi-moon-fill"></i></button>
                     <a class="nav-item nav-link active" href="<?php echo $url_base;?>index.php" aria-current="page"
                         >Administrador <span class="visually-hidden">(current)</span></a
                     >
-                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/servicios/">Servicios</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/portafolio/">Portafolio</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/producto/">Producto</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/admin/">Usuarios</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base;?>cerrar.php" >Cerrar sesión</a>
+                    
+                    <a class=" nav-link active" href="<?php echo $url_base;?>secciones/servicios/">Servicios</a>
+                    <a class=" nav-link active" href="<?php echo $url_base;?>secciones/portafolio/">Portafolio</a>
+                    <a class=" nav-link active" href="<?php echo $url_base;?>secciones/producto/">Producto</a>
+                    <a class=" nav-link active" href="<?php echo $url_base;?>secciones/admin/">Usuarios</a>
+                    <a class=" nav-link active" href="<?php echo $url_base;?>cerrar.php" >Cerrar sesión</a>
                 </div>
+                
             </nav>
             
         </header>
         <main class="container">
         </br>
+        <script>
+            // JavaScript para alternar el modo oscuro
+            const darkMode = () => {
+            document.querySelector('body').setAttribute('data-bs-theme', 'dark');
+            document.querySelector('#dl-icon').setAttribute('class', 'bi bi-sun-fill');
+            }
+            const lightMode = () => {
+            document.querySelector('body').setAttribute('data-bs-theme', 'light');
+            document.querySelector('#dl-icon').setAttribute('class', 'bi bi-moon-fill');
+            }
+
+            const cambiarModo = () => {
+            document.querySelector('body').getAttribute('data-bs-theme') === 'light' ? darkMode() : lightMode();
+            }
+        </script>
     </body>
     </html>
