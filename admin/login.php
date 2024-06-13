@@ -3,41 +3,43 @@ session_start();
 
 if ($_POST) {
     include("./bd.php");
-    
+
     $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : "";
     $password = isset($_POST['password']) ? $_POST['password'] : "";
 
-    // Seleccionar registros
-    $sentencia = $conexion->prepare("SELECT * FROM tabla_admin WHERE usuario = :usuario");
-    $sentencia->bindParam(":usuario", $usuario);
-    $sentencia->execute();
-
-    $lista_usuarios = $sentencia->fetch(PDO::FETCH_ASSOC);
-
-    //usr 
+    // Verificar root user y pass directamente
     $root = "root";
     $pass = "qwer1234";
-    //
 
-    if ($lista_usuarios && password_verify($password, $lista_usuarios['password']) || $usuario == $root && $password == $pass) {
-        // Login correcto
-        $_SESSION['usuario'] = $lista_usuarios['usuario'];
+    if ($usuario == $root && $password == $pass) {
+        $_SESSION['usuario'] = $usuario;
         $_SESSION['logueado'] = true;
         header("Location: index.php");
         exit;
     } else {
-        echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
-        echo "<script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    swal('¡Usuario o contraseña incorrecto!', '', 'error');
-                });
-              </script>";
+        // Seleccionar registros de la base de datos
+        $sentencia = $conexion->prepare("SELECT * FROM tabla_admin WHERE usuario = :usuario");
+        $sentencia->bindParam(":usuario", $usuario);
+        $sentencia->execute();
+
+        $lista_usuarios = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+        if ($lista_usuarios && password_verify($password, $lista_usuarios['password'])) {
+            // Login correcto
+            $_SESSION['usuario'] = $lista_usuarios['usuario'];
+            $_SESSION['logueado'] = true;
+            header("Location: index.php");
+            exit;
+        } else {
+            echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
+            echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        swal('¡Usuario o contraseña incorrecto!', '', 'error');
+                    });
+                  </script>";
+        }
     }
-   
 }
-
-
-
 ?>
 
 <!doctype html>
