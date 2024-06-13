@@ -72,7 +72,7 @@ if ($_POST) {
                         </div>
                         <div class="input-field">
                             <input type="password" class="input" id="password" placeholder="Contraseña" name="password" required>
-                            <i class="bx bx-lock-alt fas fa-eye toggle-passwords" id="togglePassword"></i>
+                            <i class="bx bx-lock-alt fas fa-eye toggle-password" id="togglePassword"></i>
                         </div>
                         <div class="input-field">
                             <input type="submit" class="submit" value="Iniciar Sesión" id="btn">

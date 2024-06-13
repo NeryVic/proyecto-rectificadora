@@ -78,18 +78,17 @@ span:hover {
 
 .input-field {
     display: flex;
-    
+    position: relative;
     flex-direction: column;
     margin-bottom: 15px;
 }
 
 
 
-.toggle-password {
+.toggle-password { 
     position: absolute;
-    background-color: #140b02;
     top: 50%;
-    right: 110px;
+    right: 25px;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -107,8 +106,6 @@ span:hover {
 i {
     position: relative;
     top: -31px;
-    left: 17px;
-    color: #fff;
 }
 
 ::-webkit-input-placeholder {

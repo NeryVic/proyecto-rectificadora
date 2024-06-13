@@ -1,11 +1,10 @@
-let n = 10;
+let n = 15*60;
 
 document.onmousemove = function() {
-    n = 10;
+    n = 15*60;
 };
 
 const id = setInterval(() => {
-    console.log(n);
     n--; // Decrementa el valor de n en 1
     if (n === 0) { 
         alert("Expirado"); 
