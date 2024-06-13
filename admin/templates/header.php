@@ -57,15 +57,26 @@ if(!isset($_SESSION['usuario'])){
             const darkMode = () => {
             document.querySelector('body').setAttribute('data-bs-theme', 'dark');
             document.querySelector('#dl-icon').setAttribute('class', 'bi bi-sun-fill');
+            localStorage.setItem('theme', 'dark');
             }
             const lightMode = () => {
             document.querySelector('body').setAttribute('data-bs-theme', 'light');
             document.querySelector('#dl-icon').setAttribute('class', 'bi bi-moon-fill');
+            localStorage.setItem('theme', 'light');
             }
 
             const cambiarModo = () => {
             document.querySelector('body').getAttribute('data-bs-theme') === 'light' ? darkMode() : lightMode();
             }
+             // Comprobar la preferencia del modo almacenada en localStorage
+            document.addEventListener('DOMContentLoaded', () => {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                darkMode();
+            } else {
+                lightMode();
+            }
+        });
         </script>
     </body>
     </html>
