@@ -1,4 +1,11 @@
-<?php $url_base="http://localhost/proyecto-rectificadora/admin/";?>
+<?php 
+session_start();
+$url_base="http://localhost/proyecto-rectificadora/admin/";
+if(!isset($_SESSION['usuario'])){
+    header("Location:".$url_base."login.php");
+    exit();
+}
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -20,6 +27,7 @@
         
         <!-- Incluye Remix Icon desde un CDN -->
         <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+        <script src="http://localhost/proyecto-rectificadora/assets/js/expirador3000.js"></script>
     </head>
     <body>
         <header>
@@ -33,10 +41,12 @@
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/portafolio/">Portafolio</a>
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/producto/">Producto</a>
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/admin/">Usuarios</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base;?>login.php" session_destroy()>Cerrar sesión</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>cerrar.php" >Cerrar sesión</a>
                 </div>
             </nav>
             
         </header>
         <main class="container">
-</br>
+        </br>
+    </body>
+    </html>

@@ -1,17 +1,5 @@
 <?php 
 session_start();
- // Tiempo de inactividad en segundos (5 minutos = 300 segundos)
- $inactividad = 10;
-// Actualizar el tiempo de la sesión
-$_SESSION['tiempo'] = time();
- // Verificar si la sesión está activa y si han pasado 5 minutos
- if (isset($_SESSION['logueado']) && (time() - $_SESSION['tiempo'] > $inactividad)) {
-     session_unset();     // Limpiar todas las variables de sesión
-     session_destroy();   // Destruir la sesión
-     header("Location: login.php"); // Redirigir al usuario a la página de login
-     exit;
- }
- 
 
 if ($_POST) {
     include("./bd.php");
@@ -38,10 +26,10 @@ if ($_POST) {
         header("Location: index.php");
         exit;
     } else {
-        echo "<script src='../assets/plugins/Sweetalert/dist/sweetalert2.all.min.js'></script>";
+        echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
         echo "<script>
                 document.addEventListener('DOMContentLoaded', function() {
-                    Swal.fire('¡Usuario o contraseña incorrecto!', '', 'error');
+                    swal('¡Usuario o contraseña incorrecto!', '', 'error');
                 });
               </script>";
     }
@@ -62,6 +50,7 @@ if ($_POST) {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="../assets/css/login.css">
     </head>
 
@@ -81,7 +70,7 @@ if ($_POST) {
                         </div>
                         <div class="input-field">
                             <input type="password" class="input" id="password" placeholder="Contraseña" name="password" required>
-                            <i class="bx bx-lock-alt"></i>
+                            <i class="bx bx-lock-alt fas fa-eye toggle-passwords" id="togglePassword"></i>
                         </div>
                         <div class="input-field">
                             <input type="submit" class="submit" value="Iniciar Sesión" id="btn">
@@ -96,6 +85,18 @@ if ($_POST) {
                 </div>
             </div>
         </main>
+        <script>
+            // JavaScript para alternar la visibilidad de la contraseña
+            document.getElementById('togglePassword').addEventListener('click', function () {
+                const passwordInput = document.getElementById('password');
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+            // Alternar el ícono
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+             });
+        </script>
         <footer>
             <!-- place footer here -->
         </footer>

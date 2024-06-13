@@ -78,8 +78,20 @@ span:hover {
 
 .input-field {
     display: flex;
+    
     flex-direction: column;
     margin-bottom: 15px;
+}
+
+
+
+.toggle-password {
+    position: absolute;
+    background-color: #140b02;
+    top: 50%;
+    right: 110px;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 
 .input-field .input {
