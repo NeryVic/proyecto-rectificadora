@@ -73,7 +73,7 @@ include("../../templates/header.php");?>
                             class="btn btn-info"
                             href="editar.php?txtID=<?php echo $registros['ID']; ?>"
                             role="button"
-                            >Editar</a
+                            ><i class="ri-list-settings-line"></i></a
                         >
                         <a
                             name=""
@@ -82,7 +82,7 @@ include("../../templates/header.php");?>
                             href="index.php?txtID=<?php echo $registros['ID']; ?>"
                             role="button"
                             onclick="return confirmarEliminacion();"
-                            >Eliminar</a
+                            ><i class="ri-delete-bin-line"></i></a
                         >
                         <script>
                                     function confirmarEliminacion() {
