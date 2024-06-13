@@ -27,7 +27,7 @@ include("../../templates/header.php");
         }
     }
 </script>
-
+</br>
 <div class="card">
     <div class="card-header"><a href="crear.php" class="btn btn-primary" role="button">Agregar registro</a></div>
     <div class="card-body">
