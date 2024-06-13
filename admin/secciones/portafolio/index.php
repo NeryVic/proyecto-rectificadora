@@ -67,8 +67,8 @@ include("../../templates/header.php");?>
                     <img width="75" height="75" src="../../../assets/img/portfolio/<?php echo $registro['imagen']; ?>" alt="Imagen del portafolio">
                     </td>
                         <td scope="col">
-                            <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
-                            <a id="btnEliminar" href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button" onclick="return confirmarEliminacion();">Eliminar</a>
+                        <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button"><i class="ri-list-settings-line"></i></a>
+                            <a id="btnEliminar" href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button" onclick="return confirmarEliminacion();"><i class="ri-delete-bin-line"></i></a>
                             <script>
                                     function confirmarEliminacion() {
                                         return confirm("¿Estás seguro de que deseas eliminar este registro?");

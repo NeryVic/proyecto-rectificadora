@@ -58,7 +58,7 @@ include("../../templates/header.php");?>
                             class="btn btn-info"
                             href="editar.php?txtID=<?php echo $registros['ID']; ?>"
                             role="button"
-                            >Editar</a
+                            ><i class="ri-list-settings-line"></i></a
                         >
                         <a
                             name=""
@@ -66,7 +66,7 @@ include("../../templates/header.php");?>
                             class="btn btn-danger"
                             href="index.php?txtID=<?php echo $registros['ID']; ?>"
                             role="button"
-                            >Eliminar</a
+                            ><i class="ri-delete-bin-line"></i></a
                         >
                     </td>
                 </tr>

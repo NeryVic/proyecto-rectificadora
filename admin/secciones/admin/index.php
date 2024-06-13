@@ -17,16 +17,6 @@ $lista_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 include("../../templates/header.php");
 ?>
 
-<script>
-    function mostrarOjito(element) {
-        const passField = element.previousElementSibling;
-        if (passField.type === 'password') {
-            passField.type = 'text';
-        } else {
-            passField.type = 'password';
-        }
-    }
-</script>
 
 <div class="card">
     <div class="card-header"><a href="crear.php" class="btn btn-primary" role="button">Agregar registro</a></div>
@@ -46,7 +36,7 @@ include("../../templates/header.php");
                         <td scope="row"><?php echo $registro['usuario']; ?></td>
                         <td>
                             <input type="password" id="pw<?php echo $registro['ID']; ?>" value="<?php echo $registro['password']; ?>" readonly>
-                            <span style="cursor: pointer;" onclick="mostrarOjito(this)">👁️</span>
+                            
                         </td>
                         <td scope="col">
                             <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button"><i class="ri-list-settings-line"></i></a>
