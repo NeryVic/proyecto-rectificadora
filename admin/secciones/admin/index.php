@@ -17,21 +17,7 @@ $lista_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 include("../../templates/header.php");
 ?>
 
-<<<<<<< HEAD
-<script>
-    function mostrarOjito(element) {
-        const passField = element.previousElementSibling;
-        if (passField.type === 'password') {
-            passField.type = 'text';
-        } else {
-            passField.type = 'password';
-        }
-    }
-</script>
 </br>
-=======
-
->>>>>>> 78106d1780366f1057d809a174e0a58f7627ac13
 <div class="card">
     <div class="card-header"><a href="crear.php" class="btn btn-primary" role="button">Agregar registro</a></div>
     <div class="card-body">
