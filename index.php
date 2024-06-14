@@ -8,6 +8,10 @@ include("admin/bd.php");
     $sentencia = $conexion->prepare("SELECT * FROM `tabla_portfolio`");
     $sentencia-> execute();
     $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+    //Seleccionar registros de pruducto
+    $sentencia = $conexion->prepare("SELECT * FROM `tabla_repuestos`");
+    $sentencia-> execute();
+    $lista_productos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -161,66 +165,18 @@ include("admin/bd.php");
                 </div>
             </div>
             <div class="row">
+                <?php foreach($lista_productos as $registros){;?>
                 <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
                     <div class="team-member image-zoom">
                         <div class="image-zoom-wrapper">
-                            <img src="./assets/images/blog-post-1.jpg" alt="">
+                            <img src="./assets/img/producto/<?php echo $registros['imagen'] ?>" alt="">
                         </div>
-                        <h5 class="mt-4">Producto 1</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi quos magni!</p>
+                        <h5 class="mt-4"><?php echo $registros["titulo"] ;?></h5>
+                        <p><?php echo $registros["descripcion"] ;?></p>
                         
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
-                    <div class="team-member image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/blog-post-2.jpg" alt="">
-                        </div>
-                        <h5 class="mt-4">Producto 1</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi quos magni!</p>
-                        
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
-                    <div class="team-member image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/blog-post-2.jpg" alt="">
-                        </div>
-                        <h5 class="mt-4">Producto 2</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi quos magni!</p>
-                        
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
-                    <div class="team-member image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/blog-post-2.jpg" alt="">
-                        </div>
-                        <h5 class="mt-4">Producto 3</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi quos magni!</p>
-                        
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
-                    <div class="team-member image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/blog-post-2.jpg" alt="">
-                        </div>
-                        <h5 class="mt-4">Producto 4</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi quos magni!</p>
-                        
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
-                    <div class="team-member image-zoom">
-                        <div class="image-zoom-wrapper">
-                            <img src="./assets/images/blog-post-3.jpg" alt="">
-                        </div>
-                        <h5 class="mt-4">Producto 5</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi quos magni!</p>
-                        
-                    </div>
-                </div>
+                <?php } ;?>
             </div>
         </div>
     </section>
