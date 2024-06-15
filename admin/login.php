@@ -78,10 +78,6 @@ if ($_POST) {
                             <input type="submit" class="submit" value="Iniciar Sesión" id="btn">
                         </div>
                         <div class="bottom">
-                            <div class="left">
-                                <input type="checkbox" id="check">
-                                <label for="check">Recordar</label>
-                            </div>
                         </div>
                     </form>
                 </div>

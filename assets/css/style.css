@@ -384,3 +384,23 @@ footer .line {
 .map {
     width: 100%;
 }
+
+.inline-list-item {
+    display: inline;
+    margin-right: 10px;
+}
+.icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 100px;
+}
+.icons a:hover {
+    background-color: var(--c-brand);
+    color: white
+}
+

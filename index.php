@@ -400,7 +400,15 @@ include("admin/bd.php");
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-auto">
-                        <p class="mb-0">© Copyright 2024 All Rights Reserved</p>
+                        <p class="mb-0">© Copyright <script>document.write(new Date().getFullYear());</script> All Rights Reserved</p>
+                         <ul>
+                            <div class="icons">
+                            <li class="inline-list-item"> NeryDev</li>
+                            <li class="inline-list-item"> Alejandro</li>
+                            <a href="#"><i class="ri-twitter-fill"></i></a>
+                            <a href="#"><i class="ri-instagram-fill"></i></a>
+                            </div>
+                         </ul>
                     </div>
                 </div>
             </div>

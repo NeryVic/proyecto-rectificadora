@@ -66,8 +66,14 @@ include("../../templates/header.php");?>
                             class="btn btn-danger"
                             href="index.php?txtID=<?php echo $registros['ID']; ?>"
                             role="button"
+                            onclick="return confirmarEliminacion()"
                             ><i class="ri-delete-bin-line"></i></a
                         >
+                        <script>
+                                    function confirmarEliminacion() {
+                                        return confirm("¿Estás seguro de que deseas eliminar este registro?");
+                                        }
+                            </script>
                     </td>
                 </tr>
                 <?php } ?>
