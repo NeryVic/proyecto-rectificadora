@@ -403,10 +403,8 @@ include("admin/bd.php");
                         <p class="mb-0">© Copyright <script>document.write(new Date().getFullYear());</script> All Rights Reserved</p>
                          <ul>
                             <div class="icons">
-                            <li class="inline-list-item"> NeryDev</li>
-                            <li class="inline-list-item"> Alejandro</li>
-                            <a href="#"><i class="ri-twitter-fill"></i></a>
-                            <a href="#"><i class="ri-instagram-fill"></i></a>
+                            <li class="inline-list-item">NeryDev</li><a href="https://www.linkedin.com/in/nerydev-2206-it/" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+                            <li class="inline-list-item">Alejandro</li><a href="#"><i class="ri-linkedin-box-fill"></i></a>   
                             </div>
                          </ul>
                     </div>
