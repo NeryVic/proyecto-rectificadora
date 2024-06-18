@@ -21,6 +21,8 @@ include("admin/bd.php");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resctificadora-Bassi</title>
+    <meta name="description" content="Con más de 40 años de experiencia en la industria, somos expertos en la rectificación de motores y venta de insumos automotrices. Nuestra trayectoria nos avala como un referente de confianza y calidad.">
+    <link rel="icon" type="image/x-icon" href="assets/images/logorb.jpg" />
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
@@ -109,7 +111,7 @@ include("admin/bd.php");
                     <div class="section-title">
                         <h1 class="display-4 fw-semibold">¿Quiénes somos?</h1>
                         <div class="line"></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Somos una empresa líder en rectificaciones de automotores  y ventas de insumos, comprometidos con la excelencia y la satisfacción del cliente.</p>
                     </div>
                 </div>
             </div>
@@ -119,32 +121,32 @@ include("admin/bd.php");
                 </div>
                 <div data-aos="fade-down" data-aos-delay="150" class="col-lg-5">
                     <h1>Rectificaciones-Bassi</h1>
-                    <p class="mt-3 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quo reiciendis ad.</p>
+                    <p class="mt-3 mb-4">Te invito a que nos conozcas</p>
                     <div class="d-flex pt-4 mb-3">
                         <div class="iconbox me-4">
-                            <i class="ri-mail-send-fill"></i>
+                            <i class="ri-shield-check-line"></i>
                         </div>
                         <div>
                             <h5>+40 años en el rubro</h5>
-                            <p>Lorem ipsum dolor sit amet consectetursci unde delectus omnis temporibus autem. Consequuntur magni reiciendis obcaecati ad sit soluta nobis at.!</p>
+                            <p>Con más de 40 años de experiencia en la industria, somos expertos en la rectificación de motores y venta de insumos automotrices. Nuestra trayectoria nos avala como un referente de confianza y calidad.</p>
                         </div>
                     </div>
                     <div class="d-flex mb-3">
                         <div class="iconbox me-4">
-                            <i class="ri-user-5-fill"></i>
+                            <i class="ri-hand-coin-line"></i>
                         </div>
                         <div>
                             <h5>Cuidamos tu bolsillo</h5>
-                            <p>Lorem ipsum dolor sit amet consectetursci unde delectus omnis temporibus autem.!</p>
+                            <p>En Rectificaciones-Bassi, entendemos la importancia de ofrecer servicios y productos de alta calidad a precios competitivos. Trabajamos para brindarte las mejores soluciones sin comprometer tu presupuesto.</p>
                         </div>
                     </div>
                     <div class="d-flex">
                         <div class="iconbox me-4">
-                            <i class="ri-rocket-2-fill"></i>
+                            <i class="ri-team-fill"></i>
                         </div>
                         <div>
                             <h5>somos un equipo</h5>
-                            <p>Lorem ipsum dolor sit amet consectetursci unde delectus omnis temporibus autem.!</p>
+                            <p>Nos enorgullece contar con un equipo de profesionales dedicados y apasionados por el mundo automotriz. Nuestra misión es proporcionar un servicio excepcional y productos de primera calidad para todos nuestros clientes.</p>
                         </div>
                     </div>
                 </div>
@@ -158,9 +160,9 @@ include("admin/bd.php");
             <div class="row">
                 <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
                     <div class="section-title">
-                        <h1 class="display-4 fw-semibold">También contamos con respuestos</h1>
+                        <h1 class="display-4 fw-semibold">También contamos con insumos del automotor</h1>
                         <div class="line"></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptatem repellat nulla sit.</p>
+                        <p>Encontrá los mejores productos para tu vehículo</p>
                     </div>
                 </div>
             </div>
@@ -238,7 +240,7 @@ include("admin/bd.php");
                     <div class="section-title">
                         <h1 class="display-4 fw-semibold">Nuestros Servicios</h1>
                         <div class="line"></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptatem repellat nulla sit.</p>
+                        <p>Ofrecemos servicios especializados en rectificación de motores, garantizando la máxima precisión y eficiencia. Nuestro equipo experto asegura un rendimiento óptimo para su vehículo.</p>
                     </div>
                 </div>
             </div>
