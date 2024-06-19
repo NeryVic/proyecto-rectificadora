@@ -406,7 +406,7 @@ include("admin/bd.php");
                          <ul>
                             <div class="icons">
                             <li class="inline-list-item">NeryDev</li><a href="https://www.linkedin.com/in/nerydev-2206-it/" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
-                            <li class="inline-list-item">Alejandro</li><a href="#"><i class="ri-linkedin-box-fill"></i></a>   
+                            <li class="inline-list-item">Alejandro-Desarrollador Backend</li><a href="https://www.linkedin.com/in/alejandro-pintos-44b0a62a6/"><i class="ri-linkedin-box-fill"></i></a>   
                             </div>
                          </ul>
                     </div>
