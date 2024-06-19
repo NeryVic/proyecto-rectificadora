@@ -111,7 +111,7 @@ include("admin/bd.php");
                     <div class="section-title">
                         <h1 class="display-4 fw-semibold">¿Quiénes somos?</h1>
                         <div class="line"></div>
-                        <p>Somos una empresa líder en rectificaciones de automotores  y ventas de insumos, comprometidos con la excelencia y la satisfacción del cliente.</p>
+                        <p>Somos una empresa líder en rectificaciones de automotores  y ventas de respuestos del automotor, comprometidos con la excelencia y la satisfacción del cliente.</p>
                     </div>
                 </div>
             </div>
@@ -382,7 +382,7 @@ include("admin/bd.php");
                         <h5 class="mb-0 text-white">CONTACT</h5>
                         <div class="line"></div>
                         <ul>
-                            <li>Carlos Gardel</li>
+                            <li>Carlos Gardel N° 51</li>
                             <li>Telefono</li>
                             <li>El Colorado</li>
                             <li>Formosa</li>
