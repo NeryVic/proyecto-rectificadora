@@ -47,7 +47,7 @@ include("admin/bd.php");
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./assets/images/logorb3.jpg" alt="">
+                <img style="width: 45px;" src="./assets/images/logorb-T-blank.png" alt="Rectificaciones Bassi">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +100,7 @@ include("admin/bd.php");
     <section id="about" class="section-padding">
         <!-- bton de wssp-->
         <div class="wssp wssp-container">
-              <a href="https://api.whatsapp.com/send?phone=5493704016066" target="_blank" class="wsspss">
+              <a href="https://api.whatsapp.com/send?phone=5493704582384" target="_blank" class="wsspss">
                 <img class="wsspp-img" src="./assets/images/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
               </a>
               </div>
@@ -360,9 +360,9 @@ include("admin/bd.php");
             <div class="container">
                 <div class="row gy-5">
                     <div class="col-lg-3 col-sm-6">
-                        <a href="#"><img src="./assets/images/logo-white.svg" alt=""></a>
+                        <a href="#"><img style="width: 105px;" src="./assets/images/logorb-T.png" alt="Rectificaciones Bassi"></a>
                         <div class="line"></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, hic!</p>
+                        <p></p>
                         <div class="social-icons">
                             <a href="#"><i class="ri-twitter-fill"></i></a>
                             <a href="#"><i class="ri-instagram-fill"></i></a>
